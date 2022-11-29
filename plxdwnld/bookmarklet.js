@@ -66,7 +66,7 @@ if (typeof plxDwnld === "undefined") {
             const partKeyNode = xml.evaluate(partKeyXpath, xml, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null);
 
             if (partKeyNode.singleNodeValue) {
-                window.location.href = downloadUrl.replace('{baseuri}', baseUri).replace('{partkey}', partKeyNode.singleNodeValue.textContent).replace('{token}', accessToken);
+                window.location.href = downloadUrl.replace('{baseuri}', baseUri).replace('{partkey}', partKeyNode.singleNodeValue.textContent + "/children").replace('{token}', accessToken);
             } else {
                 alert("You are currently not viewing a media item.");
             }
